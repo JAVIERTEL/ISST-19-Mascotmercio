@@ -21,7 +21,7 @@ public class Servicio {
 
     @ManyToOne
     @JoinColumn(
-        name = "id",
+        name = "id_tienda",
         referencedColumnName = "idTienda"
     )
     private Tienda tienda;
