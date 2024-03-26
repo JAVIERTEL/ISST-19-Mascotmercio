@@ -16,15 +16,24 @@ public class Resenas {
     private String contenido;
     
     // Relación ManyToOne con la entidad Tienda
-//     @ManyToOne
-//     @JoinColumn(
-//         name ="Id",
-//         referencedColumnName = "idTienda") // Columna en la tabla Resenas que hace referencia al ID de la tienda
-//     private Tienda tienda;
-    
-//     // Relación ManyToOne con la entidad Cliente
-//     @ManyToOne
-//     @JoinColumn(name ="clienteId") // Columna en la tabla Resenas que hace referencia al ID del cliente que escribe la reseña
-//     private Cliente cliente;
- }
+    @ManyToOne
+    @JoinColumn(
+        name ="id_tienda",
+        referencedColumnName = "idTienda") // Columna en la tabla Resenas que hace referencia al ID de la tienda
+    private Tienda tienda;
+
+    // Relación ManyToOne con la entidad Cliente
+    @ManyToOne
+    @JoinColumn(
+        name ="id_cliente",
+        referencedColumnName = "usuario") // Columna en la tabla Resenas que hace referencia al ID del cliente
+    private Cliente cliente;
+
+    // Relación ManyToOne con la entidad Propietario
+    @ManyToOne
+    @JoinColumn(
+        name ="id_propietario",
+        referencedColumnName = "usuario") // Columna en la tabla Resenas que hace referencia al ID del propietario
+    private Propietario propietario;
+}
 
