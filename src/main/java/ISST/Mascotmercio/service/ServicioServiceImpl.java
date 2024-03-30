@@ -20,4 +20,16 @@ public class ServicioServiceImpl implements ServicioService{
         return repository.findAll();
     }
 
+    public Servicio createServicio(Servicio servicio) {
+        return repository.save(servicio);
+    }
+
+    public Servicio updateServicio(Servicio servicio) {
+        return repository.save(servicio);
+    }
+
+    public void deleteServicio(Long id) {
+        repository.deleteById(id);
+    }
+
 }

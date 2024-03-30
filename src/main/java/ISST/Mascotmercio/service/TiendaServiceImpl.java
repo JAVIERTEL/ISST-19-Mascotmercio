@@ -21,5 +21,16 @@ public class TiendaServiceImpl implements TiendaService{
         return repository.findAll();    
     }
 
+    public Tienda createTienda(Tienda tienda) {
+        return repository.save(tienda);
+    }
+
+    public Tienda updateTienda(Tienda tienda) {
+        return repository.save(tienda);
+    }
+
+    public void deleteTienda(Long id) {
+        repository.deleteById(id);
+    }
 
 }

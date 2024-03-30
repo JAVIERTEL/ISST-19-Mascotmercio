@@ -8,5 +8,4 @@ import ISST.Mascotmercio.entity.Tienda;
 @Repository
 public interface TiendaRepository extends JpaRepository<Tienda, Long>{
 
-    
 }

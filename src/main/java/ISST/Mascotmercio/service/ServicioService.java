@@ -5,5 +5,11 @@ import java.util.List;
 import ISST.Mascotmercio.entity.Servicio;
 
 public interface ServicioService {
-    List<Servicio> findAll(); 
+    List<Servicio> findAll();
+
+    Servicio createServicio(Servicio servicio); 
+
+    Servicio updateServicio(Servicio servicio); 
+
+    void deleteServicio(Long id); 
 }
