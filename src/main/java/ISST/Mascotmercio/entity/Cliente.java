@@ -17,6 +17,5 @@ public class Cliente {
     private String contraseña;
     private String email;
 
-    @ManyToMany(mappedBy = "clientes")
-    private Set<Tienda> tiendas;
+    
 }
