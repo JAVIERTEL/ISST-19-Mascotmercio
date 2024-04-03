@@ -28,6 +28,7 @@ public class TiendaController {
         return tiendaService.findAll();
     }
 
+    
     @PostMapping
     public Tienda createTienda(@RequestBody Tienda tienda) {
         return tiendaService.createTienda(tienda);
@@ -44,4 +45,5 @@ public class TiendaController {
     public void deleteTienda(@PathVariable Long id) {
         tiendaService.deleteTienda(id);
     }
+
 }
