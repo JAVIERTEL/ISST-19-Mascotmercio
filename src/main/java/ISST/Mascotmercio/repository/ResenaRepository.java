@@ -3,9 +3,9 @@ package ISST.Mascotmercio.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import ISST.Mascotmercio.entity.Resenas;
+import ISST.Mascotmercio.entity.Resena;
 
 @Repository
-public interface ResenasRepository extends JpaRepository<Resenas, Long>{
+public interface ResenaRepository extends JpaRepository<Resena, Long>{
     
 }

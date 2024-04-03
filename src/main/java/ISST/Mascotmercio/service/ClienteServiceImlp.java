@@ -23,8 +23,8 @@ public class ClienteServiceImlp implements ClienteService {
     }
 
     
-    public void borrarCliente(Cliente cliente) {
-        repository.delete(cliente);
+    public void borrarCliente(String usuario) {
+        repository.deleteById(usuario);
     }
 
     public Cliente editarCliente(Cliente cliente){

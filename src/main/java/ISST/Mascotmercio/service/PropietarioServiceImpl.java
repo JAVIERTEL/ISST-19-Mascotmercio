@@ -23,8 +23,8 @@ public class PropietarioServiceImpl  implements PropietarioService{
     return repository.save(propietario);
     }
 
-    public void borrarPropietario(Propietario propietario){
-        repository.delete(propietario);
+    public void borrarPropietario(String usuario){
+        repository.deleteById(usuario);
     }
 
     public Propietario editarPropietario(Propietario propietario){

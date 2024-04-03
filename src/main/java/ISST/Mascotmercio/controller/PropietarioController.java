@@ -28,14 +28,14 @@ public class PropietarioController {
         return propietarioService.findAll();
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public Propietario crearPropietario(@RequestBody Propietario propietario){
         return propietarioService.crearPropietario(propietario);
     }
 
-    @DeleteMapping("/delete")
-    public void borrarPropietario(@RequestBody Propietario propietario){
-        propietarioService.borrarPropietario(propietario);
+    @DeleteMapping("/{usuario}")
+    public void borrarPropietario(@RequestBody String usuario){
+        propietarioService.borrarPropietario(usuario);
     }
 
     @PutMapping("/edit")

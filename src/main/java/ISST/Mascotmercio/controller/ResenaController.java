@@ -12,35 +12,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ISST.Mascotmercio.entity.Resenas;
-import ISST.Mascotmercio.service.ResenasService;
+import ISST.Mascotmercio.entity.Resena;
+import ISST.Mascotmercio.service.ResenaService;
 
 @RestController
 @RequestMapping("api/resenas")
 @CrossOrigin(origins = "http://localhost:3000")
-public class ResenasController {
+public class ResenaController {
 
     @Autowired
-    ResenasService resenasService;
+    ResenaService resenaService;
 
     @GetMapping("/findAll")
-    public List<Resenas> findAll(){
-        return resenasService.findAll();
+    public List<Resena> findAll(){
+        return resenaService.findAll();
     }
 
-    @PostMapping("/create")
-    public Resenas crearResena(@RequestBody Resenas resenas){
-        return resenasService.crearResena(resenas);
+    @PostMapping
+    public Resena crearResena(@RequestBody Resena resena){
+        return resenaService.crearResena(resena);
     }
 
-    @DeleteMapping("/delete")
-    public void borrarResena(@RequestBody Resenas resenas){
-        resenasService.borrarResena(resenas);
+    @DeleteMapping("/{id}")
+    public void borrarResena(@RequestBody Long id){
+        resenaService.borrarResena(id);
     }
 
     @PutMapping("/edit")
-    public Resenas editarResena(@RequestBody Resenas resenas){
-        return resenasService.editarResena(resenas);
+    public Resena editarResena(@RequestBody Resena resena){
+        return resenaService.editarResena(resena);
     }
     
 }

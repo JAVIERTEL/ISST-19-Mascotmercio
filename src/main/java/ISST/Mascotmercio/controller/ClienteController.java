@@ -28,17 +28,17 @@ public class ClienteController {
         return clienteService.findAll();
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public Cliente crearCliente(@RequestBody Cliente cliente){
         return clienteService.crearCliente(cliente);
     }
 
-    @DeleteMapping("/delete")
-    public void borrarCliente(@RequestBody Cliente cliente){
-        clienteService.borrarCliente(cliente);
+    @DeleteMapping("/{usuario}")
+    public void borrarCliente(@RequestBody String usuario){
+        clienteService.borrarCliente(usuario);
     }
 
-    @PutMapping("/edit")
+    @PutMapping("/")
     public Cliente editarCliente(@RequestBody Cliente cliente){
         return clienteService.editarCliente(cliente);
     }

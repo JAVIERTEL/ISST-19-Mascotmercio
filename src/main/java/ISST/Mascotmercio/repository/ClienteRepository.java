@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ISST.Mascotmercio.entity.Cliente;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Long>{
+public interface ClienteRepository extends JpaRepository<Cliente, String>{
     
 }
