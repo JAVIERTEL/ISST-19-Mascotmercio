@@ -1,6 +1,7 @@
 package ISST.Mascotmercio.controller;
 
 import ISST.Mascotmercio.entity.Servicio;
+import ISST.Mascotmercio.entity.Tienda;
 import ISST.Mascotmercio.service.ServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -46,6 +47,9 @@ public class ServicioController {
         servicioService.deleteServicio(id);
     }
 
-
+    @GetMapping("/{id}")
+    public Servicio getServicioById(@PathVariable Long id) {
+    return servicioService.findById(id);
+}
 
 }
