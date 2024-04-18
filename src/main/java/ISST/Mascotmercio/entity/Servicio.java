@@ -1,5 +1,6 @@
 package ISST.Mascotmercio.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -20,7 +21,7 @@ public class Servicio {
     private boolean peluqueria;
     private boolean accesorios;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(
         name = "id_tienda",
         referencedColumnName = "idTienda"
