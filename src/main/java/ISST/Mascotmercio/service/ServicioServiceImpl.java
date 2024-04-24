@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ISST.Mascotmercio.entity.Servicio;
+import ISST.Mascotmercio.entity.Tienda;
 import ISST.Mascotmercio.repository.ServicioRepository;
 
 @Service
@@ -31,5 +32,8 @@ public class ServicioServiceImpl implements ServicioService{
     public void deleteServicio(Long id) {
         repository.deleteById(id);
     }
-
+    @Override
+    public Servicio findById(Long id) {
+    return repository.findById(id).orElse(null);
+}
 }

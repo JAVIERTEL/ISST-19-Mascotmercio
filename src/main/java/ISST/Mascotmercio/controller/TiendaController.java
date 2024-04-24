@@ -45,5 +45,9 @@ public class TiendaController {
     public void deleteTienda(@PathVariable Long id) {
         tiendaService.deleteTienda(id);
     }
+    @GetMapping("/{id}")
+    public Tienda getTiendaById(@PathVariable Long id) {
+    return tiendaService.findById(id);
+}
 
 }

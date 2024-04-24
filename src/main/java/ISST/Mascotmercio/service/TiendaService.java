@@ -10,6 +10,8 @@ public interface TiendaService {
     Tienda createTienda(Tienda tienda); 
 
     Tienda updateTienda(Tienda tienda); 
+    
+    Tienda findById(Long id);
 
     void deleteTienda(Long id); 
 }

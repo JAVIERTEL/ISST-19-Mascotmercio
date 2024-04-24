@@ -32,5 +32,9 @@ public class TiendaServiceImpl implements TiendaService{
     public void deleteTienda(Long id) {
         repository.deleteById(id);
     }
+    @Override
+public Tienda findById(Long id) {
+    return repository.findById(id).orElse(null);
+}
 
 }
