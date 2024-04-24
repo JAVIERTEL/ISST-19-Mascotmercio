@@ -11,7 +11,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestParam;
 
+
+import org.springframework.http.ResponseEntity;
+import ISST.Mascotmercio.Dto.PropietarioDTO;
+import ISST.Mascotmercio.Dto.LoginDTO;
+import ISST.Mascotmercio.response.LoginMessage;
 import ISST.Mascotmercio.entity.Propietario;
 import ISST.Mascotmercio.service.PropietarioService;
 
@@ -42,5 +49,27 @@ public class PropietarioController {
     public Propietario editarPropietario(@RequestBody Propietario propietario){
         return propietarioService.editarPropietario(propietario);
     
+    }
+
+    @PostMapping(path="/save")
+    public String savePropietario (@RequestBody PropietarioDTO propietarioDTO){
+        String id= propietarioService.crearPropietarioDTO(propietarioDTO);
+        return id;
+    }
+
+    @PostMapping(path = "/login")
+    public ResponseEntity<?> loginPropietario(@RequestBody LoginDTO loginDTO)
+    {
+        LoginMessage loginMessage  = propietarioService.loginPropietario(loginDTO);
+        return ResponseEntity.ok(loginMessage);
+    }
+    @GetMapping("/email")
+    public ResponseEntity<String> getEmailByUsuario(@RequestParam String usuario) {
+        String email = propietarioService.getEmailByUsuario(usuario);
+        return new ResponseEntity<>(email, HttpStatus.OK);
+    }
+    
+    
 }
-}
+
+

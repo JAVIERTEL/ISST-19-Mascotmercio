@@ -14,5 +14,14 @@ public class Cliente {
     private String contraseña;
     private String email;
 
-    
+    // Constructor con todos los campos
+    public Cliente(String usuario, String contraseña, String email) {
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+        this.email = email;
+    }
+
+    // Constructor vacío requerido por JPA
+    public Cliente() {
+    }
 }
