@@ -16,4 +16,6 @@ public interface PropietarioService {
     Propietario editarPropietario(Propietario propietario);
     String crearPropietarioDTO(PropietarioDTO propietarioDTO);
     LoginMessage loginPropietario(LoginDTO loginDTO);
+    String getEmailByUsuario(String usuario); 
+
 }

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 import org.springframework.http.ResponseEntity;
 import ISST.Mascotmercio.Dto.PropietarioDTO;
@@ -60,6 +63,12 @@ public class PropietarioController {
         LoginMessage loginMessage  = propietarioService.loginPropietario(loginDTO);
         return ResponseEntity.ok(loginMessage);
     }
+    @GetMapping("/email")
+    public ResponseEntity<String> getEmailByUsuario(@RequestParam String usuario) {
+        String email = propietarioService.getEmailByUsuario(usuario);
+        return new ResponseEntity<>(email, HttpStatus.OK);
+    }
+    
     
 }
 

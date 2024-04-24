@@ -14,4 +14,6 @@ public interface ClienteService {
     Cliente editarCliente(Cliente cliente);
     String crearClienteDTO(ClienteDTO clienteDTO);
     LoginMessage loginCliente(LoginDTO loginDTO);
+    String getEmailByUsuario(String usuario); 
+
 }

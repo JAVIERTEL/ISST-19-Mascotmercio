@@ -80,4 +80,12 @@ public class PropietarioServiceImpl implements PropietarioService {
     public Propietario editarPropietario(Propietario propietario){
         return repository.save(propietario);
     }
+    @Override
+    public String getEmailByUsuario(String usuario) {
+        Propietario propietario = repository.findByUsuario(usuario);
+        if (propietario == null) {
+            throw new IllegalArgumentException("Propietario no encontrado");
+        }
+        return propietario.getEmail();
+        }
 }

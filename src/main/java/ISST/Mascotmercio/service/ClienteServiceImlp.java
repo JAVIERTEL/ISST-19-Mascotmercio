@@ -80,4 +80,13 @@ public class ClienteServiceImlp implements ClienteService {
     public Cliente editarCliente(Cliente cliente){
         return repository.save(cliente);
     }
+
+    @Override
+public String getEmailByUsuario(String usuario) {
+    Cliente cliente = repository.findByUsuario(usuario);
+    if (cliente == null) {
+        throw new IllegalArgumentException("Cliente no encontrado");
+    }
+    return cliente.getEmail();
+    }
 }
