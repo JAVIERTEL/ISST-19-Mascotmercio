@@ -45,7 +45,7 @@ public class ClienteController {
         clienteService.borrarCliente(usuario);
     }
 
-    @PutMapping("/")
+    @PutMapping("/edit")
     public Cliente editarCliente(@RequestBody Cliente cliente){
         return clienteService.editarCliente(cliente);
     }
