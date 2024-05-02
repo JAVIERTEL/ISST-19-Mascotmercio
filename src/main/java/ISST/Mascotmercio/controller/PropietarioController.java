@@ -48,7 +48,6 @@ public class PropietarioController {
     @PutMapping("/edit")
     public Propietario editarPropietario(@RequestBody Propietario propietario){
         return propietarioService.editarPropietario(propietario);
-    
     }
 
     @PostMapping(path="/save")
