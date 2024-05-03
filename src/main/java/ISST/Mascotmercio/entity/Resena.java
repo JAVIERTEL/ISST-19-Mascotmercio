@@ -1,6 +1,8 @@
 package ISST.Mascotmercio.entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -11,6 +13,7 @@ import lombok.Data;
 @Table(name = "resena")
 public class Resena{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera automáticamente el ID numérico
     private Long idResena;
     private String autor;
     private String titulo; // Asumo que se agrega un atributo 'titulo' para representar el título de la reseña
@@ -30,11 +33,6 @@ public class Resena{
         referencedColumnName = "usuario") // Columna en la tabla Resenas que hace referencia al ID del cliente
     private Cliente cliente;
 
-    // Relación ManyToOne con la entidad Propietario
-    @ManyToOne
-    @JoinColumn(
-        name ="id_propietario",
-        referencedColumnName = "usuario") // Columna en la tabla Resenas que hace referencia al ID del propietario
-    private Propietario propietario;
+    
 }
 
