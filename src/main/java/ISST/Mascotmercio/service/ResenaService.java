@@ -9,4 +9,5 @@ public interface ResenaService {
     Resena crearResena(Resena resena);
     void borrarResena(Long id);
     Resena editarResena(Resena resena);
+    Resena findById(Long id);
 }

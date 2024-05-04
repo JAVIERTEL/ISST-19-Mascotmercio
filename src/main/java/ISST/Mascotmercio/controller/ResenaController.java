@@ -28,6 +28,12 @@ public class ResenaController {
         return resenaService.findAll();
     }
 
+    @GetMapping("/findAll/{id}")
+    public Resena findById(@RequestBody Long id){
+        return resenaService.findById(id);
+    }
+
+
     @PostMapping
     public Resena crearResena(@RequestBody Resena resena){
         return resenaService.crearResena(resena);

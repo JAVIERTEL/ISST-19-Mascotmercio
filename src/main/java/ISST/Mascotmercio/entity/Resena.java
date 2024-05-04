@@ -13,7 +13,6 @@ import lombok.Data;
 @Table(name = "resena")
 public class Resena{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera automáticamente el ID numérico
     private Long idResena;
     private String autor;
     private String titulo; // Asumo que se agrega un atributo 'titulo' para representar el título de la reseña
