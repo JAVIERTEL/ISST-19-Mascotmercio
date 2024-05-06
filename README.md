@@ -46,7 +46,7 @@
   
   - Clona este repositorio en tu máquina local:
   `git clone https://github.com/JAVIERTEL/ISST-19-Mascotmercio.git`
-  - Clone el repositorio perteneciente al frontend en tu máquina locdal:
+  - Clone el repositorio perteneciente al frontend en tu máquina local:
   `git clone https://github.com/JAVIERTEL/ISST-19-Mascotmercio-React.git`
   - Navega hasta el directorio del proyecto.
   - Para iniciar el servidor Spring Boot, navega hasta el directorio del backend y ejecuta `mvn spring-boot:run`.
